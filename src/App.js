@@ -101,7 +101,7 @@ const toggleProp = (home) =>{
       </div>
 
             {toggle  && (
-              <Home home={home} provider={provider} account={account} escrow={escrow} togglePop={toggleProp} />
+              <Home home={home} provider={provider} account={account} escrow={escrow} togglePop={toggle} />
             )}
 
     </div>
