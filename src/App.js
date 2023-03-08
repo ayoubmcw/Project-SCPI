@@ -13,7 +13,6 @@ import Escrow from './abis/Escrow.json'
 // Config
 import config from './config.json';
 
-
 function App() {
   const [provider, setProvider] = useState(null)
   const [escrow, setEscrow] = useState(null)
@@ -31,10 +30,7 @@ function App() {
 
     const realEstate = new ethers.Contract(config[network.chainId].realEstate.address, RealEstate, provider)
     const totalSupply = await realEstate.totalSupply()
-    // afficher numero des bien  
-    //console.log(totalSupply.toString())
     const homes = []
-// fetsch NFT pour recupere tout les realestate
 
     for (var i = 1; i <= totalSupply; i++) {
       const uri = await realEstate.tokenURI(i)
@@ -44,8 +40,7 @@ function App() {
     }
 
     setHomes(homes)
-    console.log(homes)
-// affichier escrow
+
     const escrow = new ethers.Contract(config[network.chainId].escrow.address, Escrow, provider)
     setEscrow(escrow)
 
@@ -60,49 +55,46 @@ function App() {
     loadBlockchainData()
   }, [])
 
-const toggleProp = (home) =>{
-  setHome(home)
-  toggle ? setToggle(false) : setToggle(true)
-  //console.log(home)
-}
-
+  const togglePop = (home) => {
+    setHome(home)
+    toggle ? setToggle(false) : setToggle(true);
+  }
 
   return (
     <div>
       <Navigation account={account} setAccount={setAccount} />
       <Search />
+
       <div className='cards__section'>
 
-        <h3>SI Homes for yo to  invest  </h3>
+        <h3>Homes For You</h3>
+
         <hr />
+
         <div className='cards'>
           {homes.map((home, index) => (
-
-              <div className='card' key={index} onClick={() => toggleProp(home)}>
-                  <div className='card__image'>
-                    <img src={home.image} alt="home"/>
-                  </div>
-                  <div className='card__info'>
-                    <h4>{home.attributes[0].value} ETH</h4>
-                    <p>
-                      <strong>{home.attributes[2].value}</strong> bds |
-                      <strong>{home.attributes[3].value}</strong> ba |
-                      <strong>{home.attributes[4].value}</strong> sqft
-                    </p>
-                    <p>{home.address}</p>
-                  </div>
-
-                </div>
-
+            <div className='card' key={index} onClick={() => togglePop(home)}>
+              <div className='card__image'>
+                <img src={home.image} alt="Home" />
+              </div>
+              <div className='card__info'>
+                <h4>{home.attributes[0].value} ETH</h4>
+                <p>
+                  <strong>{home.attributes[2].value}</strong> bds |
+                  <strong>{home.attributes[3].value}</strong> ba |
+                  <strong>{home.attributes[4].value}</strong> sqft
+                </p>
+                <p>{home.address}</p>
+              </div>
+            </div>
           ))}
-          
         </div>
 
       </div>
 
-            {toggle  && (
-              <Home home={home} provider={provider} account={account} escrow={escrow} togglePop={toggle} />
-            )}
+      {toggle && (
+        <Home home={home} provider={provider} account={account} escrow={escrow} togglePop={togglePop} />
+      )}
 
     </div>
   );
