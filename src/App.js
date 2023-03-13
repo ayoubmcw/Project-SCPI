@@ -1,12 +1,11 @@
 import {createContext, useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 // Components
 import Navigation from './components/Navigation';
 import Search from './components/Search';
 import Home from './components/Home';
-import Step from "./components/Formular/Step";
-import MyStepper from "./components/Formular/MyStepper";
+
 
 // ABIs
 import RealEstate from './abis/RealEstate.json'
@@ -98,12 +97,6 @@ function App() {
             </div>
           ))}
         </div>
-        <FormContext.Provider
-          value={{ activeStepIndex, setActiveStepIndex, formDataResidence, setFormDataResidence, formDataOwner,setFormDataOwner }}
-        >
-          <MyStepper />
-          <Step />
-        </FormContext.Provider>
 
       </div>
 

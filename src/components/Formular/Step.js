@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FormContext } from "../../App";
+import { FormContext } from "../Add";
 import PersonalInformations from "./PersonalInformations";
 import ResidenceDetails from "./ResidenceDetails";
 import ReviewInformations from "./ReviewInformations";

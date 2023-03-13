@@ -8,7 +8,7 @@ import {
   FormControlLabel,
 } from "@mui/material";
 import React, { useContext } from "react";
-import { FormContext } from "../../App";
+import { FormContext } from "../Add";
 import * as yup from "yup";
 
 function PersonalInformations() {

@@ -1,6 +1,6 @@
 import { Stepper, Step, StepLabel } from "@mui/material";
 import React, { useContext, useEffect } from "react";
-import { FormContext } from "../../App";
+import { FormContext } from "../Add";
 
 const steps = ["Residence Details", "Personal Informations", "Review and Submit"];
 
