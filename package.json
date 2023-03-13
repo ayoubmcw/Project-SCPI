@@ -6,9 +6,11 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "ipfs": "^0.66.0",
+    "ipfs-core": "^0.18.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -36,8 +38,20 @@
     ]
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
     "@openzeppelin/contracts": "^4.7.3",
     "hardhat": "^2.12.0"
-  }
+  },
+  "description": "- Solidity (Writing Smart Contracts & Tests)\r - Javascript (React & Testing)\r - [Hardhat](https://hardhat.org/) (Development Framework)\r - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)\r - [React.js](https://reactjs.org/) (Frontend Framework)",
+  "main": "hardhat.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://ulysseguillot.fr:20443/rabah-taalbi/bourse_echange.git/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
