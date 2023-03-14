@@ -16,7 +16,7 @@ import {
     const [estimate, setEstimate] = useState("");
     // const fs = require("fs");
     // var fs = require('browserify-fs');
-  
+    
     const formdatatest = {
       name: "",
       adress:
@@ -54,7 +54,9 @@ import {
         },
       ],
     };
-  
+
+  localStorage.setItem("formdatatest", JSON.stringify(formdatatest));
+
     console.log(formdatatest);
   
     const handleBack = () => {
@@ -80,6 +82,8 @@ import {
       //   if (err) throw err;
       //   console.log('File written successfully!');
       // });
+
+
     };
   
     return (
