@@ -65,32 +65,12 @@ function ResidenceDetails() {
         postalcode: "",
         description: "",
         image: fileUrl,
-        // attributes: [
-        //   {
-        //     trait_type: "Purchase Price",
-        //     value: "",
-        //   },
-        //   {
-        //     trait_type: "Type of Residence",
-        //     value: "",
-        //   },
-        //   {
-        //     trait_type: "Bed Rooms",
-        //     value: "",
-        //   },
-        //   {
-        //     trait_type: "Bathrooms",
-        //     value: "",
-        //   },
-        //   {
-        //     trait_type: "Square Feet",
-        //     value: "",
-        //   },
-        //   {
-        //     trait_type: "Year Built",
-        //     value: "",
-        //   },
-        // ],
+        typeofresidence: "",
+        price: "",
+        constructionyear: "",
+        bedrooms: "",
+        bathrooms: "",
+        squarefeet: "",
       }}
       validationSchema={ValidationSchema}
       onSubmit={(values) => {
@@ -98,17 +78,24 @@ function ResidenceDetails() {
         setFormDataResidence(data);
         setActiveStepIndex(activeStepIndex + 1);
         console.log(data);
-        // data.attributes[0].value = data.price;
-        // data.attributes[1].value = data.typeofresidence;
-        // data.attributes[2].value = data.bedrooms;
-        // data.attributes[3].value = data.bathrooms;
-        // data.attributes[4].value = data.squarefeet;
-        // data.attributes[5].value = data.constructionyear;
       }}
     >
       {(props: FormikProps<any>) => (
         <Form>
-          <Stack sx={{ mt: 5, mb: 3 }}>
+          <Stack sx={{ mt: 7, mb: 3 }} direction="row" spacing={3}>
+            <Box sx={{ flexGrow: { xs: 1, md: 1 } }}>
+              <Field
+                autoComplete="nope"
+                required
+                name="name"
+                fullWidth
+                id="outlined-name"
+                label="Name of residence"
+                component={MyInput}
+              />
+            </Box>
+          </Stack>
+          <Stack sx={{ my: 3 }}>
             <Box sx={{ flexGrow: { xs: 1, md: 1 } }}>
               <Field
                 autoComplete="nope"
@@ -192,7 +179,7 @@ function ResidenceDetails() {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
-                      <span style={{ fontWeight: "bold" }}>pi²</span>
+                      <span style={{ fontWeight: "bold" }}>ft²</span>
                     </InputAdornment>
                   ),
                 }}
