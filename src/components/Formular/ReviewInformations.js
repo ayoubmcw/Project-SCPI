@@ -54,8 +54,14 @@ import {
         },
       ],
     };
-
-  localStorage.setItem("formdatatest", JSON.stringify(formdatatest));
+    
+    /*const fs = require('fs');
+    // Ecriture dans un fichier
+    fs.writeFile('../json/formdatatest.json', formdatatest, (err) => {
+      if (err) throw err;
+      console.log('Les informations de la revue ont été enregistrées dans ..reviewInfo.json');
+    });*/
+ // localStorage.setItem("formdatatest", JSON.stringify(formdatatest));
 
     console.log(formdatatest);
   
