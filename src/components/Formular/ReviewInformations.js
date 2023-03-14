@@ -191,63 +191,63 @@ import {
   
         <Stack
           sx={{
-            flexGrow: { xs: 1 },
-            mt: 8,
-            mb: 3,
-            justifyContent: "space-between",
-          }}
-          direction={{ xs: "column", md: "row" }}
-          spacing={3}
-        >
-          <Button
-            variant="contained"
-            sx={{
-              width: 200,
-              p: 1.5,
-              color: "grey",
-              backgroundColor: "#D8D8D8",
-              "&:hover": {
-                color: "white",
-                backgroundColor: "#868686",
-              },
-              fontSize: "1rem",
-              fontWeight: "bold",
-              textTransform: "uppercase",
-            }}
-            onClick={handleBack}
-          >
-            Back
-          </Button>
-  
-          <Button
-            variant="contained"
-            sx={{
-              width: 380,
+            width: 200,
+            p: 1.5,
+            color: "grey",
+            backgroundColor: "#D8D8D8",
+            "&:hover": {
               color: "white",
-              backgroundColor: "#6C63FF",
-              "&:hover": {
-                backgroundColor: "#4c46b6",
-              },
-  
-              p: 1.5,
-              fontSize: "1rem",
-              fontWeight: "bold",
-              textTransform: "uppercase",
-            }}
-            onClick={handleFormSubmit}
-          >
-            Receive my estimation
-          </Button>
-        </Stack>
-        <Stack>
-          <Box>
-            {estimate && (
-              <Typography variant="h5">
-                La valeur estimée du bien est de {estimate} euros.
+              backgroundColor: "#868686",
+            },
+            fontSize: "1rem",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+          }}
+          onClick={handleBack}
+        >
+          Back
+        </Button>
+
+        <Button
+          variant="contained"
+          sx={{
+            width: 380,
+            color: "white",
+            backgroundColor: "#6C63FF",
+            "&:hover": {
+              backgroundColor: "#4c46b6",
+            },
+            p: 1.5,
+            fontSize: "1rem",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+          }}
+          onClick={handleFormSubmit}
+        >
+          Receive my estimation
+        </Button>
+      </Stack>
+      <Stack>
+        <Box>
+          {estimate && (
+            <Stack
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                my: 5,
+              }}
+            >
+              <Typography
+                sx={{ mt: 5, fontSize: "1rem", fontWeight: "bold" }}
+                variant="overline"
+              >
+                The estimated value of the property is {estimate} ETH.
               </Typography>
-            )}
-          </Box>
-        </Stack>
-      </>
-    );
-  }
+            </Stack>
+          )}
+        </Box>
+      </Stack>
+    </>
+  );
+}
