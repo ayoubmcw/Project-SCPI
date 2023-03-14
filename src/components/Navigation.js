@@ -4,6 +4,7 @@ import logo from '../assets/logo.svg';
 import React from 'react';
 import { Link } from "react-router-dom";
 import Add from './Add';
+
 import App from '../App';
 
 const Navigation = ({ account, setAccount }) => {
@@ -18,7 +19,7 @@ const Navigation = ({ account, setAccount }) => {
         <nav>
             <ul className='nav__links'>
                 <li><a href="/">Accueil</a></li>
-                <li><a href="#">Mon compte</a></li>
+                <li><a href="/json">Mon compte</a></li>
     
                 <li><a href="/add">Add</a></li>
             </ul>

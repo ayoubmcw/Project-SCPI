@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Add from './components/Add'
+
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter,  Routes, Route } from 'react-router-dom';
 
@@ -13,6 +14,8 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/add" element={<Add />} />
+ 
+        
       </Routes>
     </BrowserRouter>
   
