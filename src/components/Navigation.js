@@ -1,5 +1,10 @@
 import { ethers } from 'ethers';
+
 import logo from '../assets/logo.svg';
+import React from 'react';
+import { Link } from "react-router-dom";
+import Add from './Add';
+import App from '../App';
 
 const Navigation = ({ account, setAccount }) => {
     const connectHandler = async () => {
@@ -8,12 +13,14 @@ const Navigation = ({ account, setAccount }) => {
         setAccount(account);
     }
 
+
     return (
         <nav>
             <ul className='nav__links'>
-                <li><a href="#">account</a></li>
-                <li><a href="#">my list</a></li>
-                <li><a href="Add">add</a></li>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="#">Mon compte</a></li>
+    
+                <li><a href="/add">Add</a></li>
             </ul>
 
             <div className='nav__brand'>
@@ -37,7 +44,11 @@ const Navigation = ({ account, setAccount }) => {
                     Connect
                 </button>
             )}
+
         </nav>
+
+
+
     );
 }
 
