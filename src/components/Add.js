@@ -3,9 +3,13 @@ import Step from "./Formular/Step";
 import MyStepper from "./Formular/MyStepper";
 
 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
 // Components
+
 import Navigation from './Navigation';
 import Search from './Search';
+import Home from './Home';
 
 
 
@@ -19,24 +23,24 @@ function Add() {
 
     return (
     <div>
-      <Navigation account={account} setAccount={setAccount} />
-      <Search />
+    <Navigation account={account} setAccount={setAccount} />
+    <Search />
 
-      <div className='cards__section'>
+    <div className='cards__section'>
 
         <h3>Formulaire</h3>
 
         <hr />
         <FormContext.Provider
-          value={{ activeStepIndex, setActiveStepIndex, formDataResidence, setFormDataResidence, formDataOwner,setFormDataOwner }}
+        value={{ activeStepIndex, setActiveStepIndex, formDataResidence, setFormDataResidence, formDataOwner,setFormDataOwner }}
         >
-          <MyStepper />
-          <Step />
+        <MyStepper />
+        <Step/>
         </FormContext.Provider>
 
-      </div>
+    </div>
 
     </div>
-  );
+);
 }
 export default Add;

@@ -16,7 +16,7 @@ import {
     const [estimate, setEstimate] = useState("");
     // const fs = require("fs");
     // var fs = require('browserify-fs');
-  
+    
     const formdatatest = {
       name: "",
       adress:
@@ -54,7 +54,15 @@ import {
         },
       ],
     };
-  
+    
+    /*const fs = require('fs');
+    // Ecriture dans un fichier
+    fs.writeFile('../json/formdatatest.json', formdatatest, (err) => {
+      if (err) throw err;
+      console.log('Les informations de la revue ont été enregistrées dans ..reviewInfo.json');
+    });*/
+ // localStorage.setItem("formdatatest", JSON.stringify(formdatatest));
+
     console.log(formdatatest);
   
     const handleBack = () => {
@@ -80,6 +88,8 @@ import {
       //   if (err) throw err;
       //   console.log('File written successfully!');
       // });
+
+
     };
   
     return (
