@@ -24,7 +24,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: elhanda/microservices-clinique-dentaire:latest
+          tags: elhanda/milloapp:latest
 
       - name: Send request to local server
         run: |
