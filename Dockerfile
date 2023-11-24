@@ -1,25 +1,20 @@
-# Use a Node.js image as the base
-FROM node:18.16
+# Use an official Node.js runtime as a parent image
+FROM node:14-alpine
 
-# Set the working directory
-WORKDIR /usr/src/app
+# Set the working directory to /app
+WORKDIR /app
 
-# Copy 'package.json' and 'package-lock.json' (if available)
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-# Install dependencies
+# Install any needed packages specified in package.json
 RUN npm install
 
-#Run tests
-RUN npm hardhat test
-# Copy all project files into the container
+# Copy the rest of the application code to the working directory
 COPY . .
 
-# Build the Next.js application
-RUN npm run build
-
-# Expose the port used by your application (usually 3000 for Next.js)
+# Expose port 3000 to the outside world
 EXPOSE 3000
 
-# Command to start the application
+# Define the command to run your application
 CMD ["npm", "start"]
