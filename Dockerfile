@@ -10,7 +10,8 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-
+#Run tests
+RUN npm hardhat test
 # Copy all project files into the container
 COPY . .
 
