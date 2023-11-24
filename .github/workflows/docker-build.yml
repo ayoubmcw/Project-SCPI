@@ -36,7 +36,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: elhanda/projet-devops:latest
+          tags: elhanda/projet-devop:latest
 
       - name: Send request to local server
         run: |
