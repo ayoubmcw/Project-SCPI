@@ -13,8 +13,12 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Expose port 3000 to the outside world
+# Install dependencies for Hardhat and run tests
+RUN npm install
+RUN npx hardhat test
+
+# Expose port 3000 for the React application
 EXPOSE 3000
 
-# Define the command to run your application
+# Define the command to start the React application
 CMD ["npm", "start"]
