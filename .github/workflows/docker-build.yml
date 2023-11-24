@@ -3,7 +3,7 @@ name: Docker Build and Push images Agustin
 on:
   push:
     branches:
-      - main
+      - starter_code
 
 jobs:
   build-and-push:
